@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MEDHA-AI</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div style="text-align:right; padding:10px;">
+    <a href="/login">Login</a> |
+    <a href="/register">Register</a>
+</div>
+
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/login">Login</a>
+    <a href="/register">Register</a>
+</div>
+<div class="container">
+    <h1>🚀 MEDHA-AI Learning Platform</h1>
+
+    <form action="/dashboard" method="POST" class="form-box">
+        <input type="text" name="name" placeholder="Enter Your Name" required>
+
+        <select name="goal">
+            <option value="AI Engineer">AI Engineer</option>
+            <option value="Web Developer">Web Developer</option>
+        </select>
+
+        <button type="submit">Generate Roadmap</button>
+    </form>
+</div>
+
+</body>
+</html>
