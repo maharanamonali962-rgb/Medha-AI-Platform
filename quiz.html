@@ -1,9 +1,0 @@
-<form action="/submit" method="POST">
-    {% for q in questions %}
-        <p>{{q.q}}</p>
-        <input type="text"><br>
-    {% endfor %}
-
-    <input type="hidden" name="score" value="10">
-    <button type="submit">Submit</button>
-</form>
