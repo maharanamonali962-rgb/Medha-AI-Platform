@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Progress</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>📊 Your Progress</h2>
+
+    <canvas id="myChart"></canvas>
+
+    <a href="/" class="btn">⬅ Back</a>
+</div>
+
+<script>
+let scores = {{ scores }};
+
+new Chart(document.getElementById("myChart"), {
+    type: 'line',
+    data: {
+        labels: ["Test1","Test2","Test3","Test4","Test5"],
+        datasets: [{
+            label: "Score",
+            data: scores
+        }]
+    }
+});
+</script>
+
+</body>
+</html>

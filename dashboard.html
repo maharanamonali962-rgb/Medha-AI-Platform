@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>👋 Welcome {{ name }}</h2>
+
+    <div class="card">
+    <h3>🤖 Ask AI Assistant</h3>
+
+    <input type="text" id="msg" placeholder="Ask something...">
+    <button onclick="sendMsg()">Send</button>
+
+    <p id="reply"></p>
+</div>
+
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/progress">Progress</a>
+    <a href="/logout">Logout</a>
+</div>
+
+<div class="container">
+    <h2>👋 Welcome {{ name }}</h2>
+
+    <div class="card">
+        <h3>📚 Your Roadmap</h3>
+        <pre>{{ roadmap }}</pre>
+    </div>
+
+    <!-- Chatbot -->
+    <div class="card chatbox">
+        <h3>🤖 AI Assistant</h3>
+        <input type="text" id="msg" placeholder="Ask something...">
+        <button onclick="sendMsg()">Send</button>
+        <p id="reply"></p>
+    </div>
+</div>
+
+<script>
+function sendMsg() {
+    let msg = document.getElementById("msg").value;
+
+    fetch('/chat', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: "message=" + msg
+    })
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById("reply").innerText = data.reply;
+    });
+}
+</script>
+
+    <a href="/" class="btn">⬅ Back</a>
+    <a href="/progress" class="btn">View Progress</a>
+</div>
+
+</body>
+</html>
